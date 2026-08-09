@@ -7,3 +7,4 @@ python-dotenv
 google-genai
 Werkzeug
 gunicorn
+reportlab
