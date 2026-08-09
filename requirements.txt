@@ -6,4 +6,4 @@ PyMuPDF
 python-dotenv
 google-genai
 Werkzeug
-gunicornP
+gunicorn
