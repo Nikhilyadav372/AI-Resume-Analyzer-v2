@@ -1,0 +1,308 @@
+.interview-container{
+
+    width:90%;
+
+    max-width:900px;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+
+.interview-container h1{
+
+    text-align:center;
+
+    color:#2563eb;
+
+    margin-bottom:15px;
+
+}
+
+
+.interview-container p{
+
+    text-align:center;
+
+    color:#64748b;
+
+    margin-bottom:30px;
+
+}
+
+
+
+/* Progress bar */
+
+.interview-container > div:first-child{
+
+    background:#e5e7eb;
+
+}
+
+
+.interview-container > div:first-child div{
+
+    background:#22c55e;
+
+}
+
+
+
+/* Buttons */
+
+.upload-btn{
+
+    padding:14px 25px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.upload-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+
+.upload-btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+
+
+/* Question + Feedback card */
+
+
+.report-section{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    background:#f8fafc;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+
+.report-section h2{
+
+    color:#2563eb;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.report-section pre{
+
+    white-space:pre-wrap;
+
+    line-height:1.6;
+
+    font-size:16px;
+
+    color:#334155;
+
+}
+
+
+
+/* Answer box */
+
+
+.answer-box{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    border:1px solid #cbd5e1;
+
+    font-size:16px;
+
+    resize:vertical;
+
+    outline:none;
+
+    box-sizing:border-box;
+
+}
+
+
+
+.answer-box:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+
+}
+
+
+
+/* =========================
+   Tablet
+========================= */
+
+
+@media(max-width:1024px){
+
+
+.interview-container{
+
+    width:85%;
+
+    padding:30px;
+
+}
+
+
+}
+
+
+
+/* =========================
+   Mobile
+========================= */
+
+
+@media(max-width:768px){
+
+
+.interview-container{
+
+    width:auto;
+
+    margin:20px;
+
+    padding:20px;
+
+}
+
+
+.interview-container h1{
+
+    font-size:26px;
+
+}
+
+
+
+.interview-container p{
+
+    font-size:14px;
+
+}
+
+
+
+.upload-btn{
+
+    width:100%;
+
+    margin-top:10px;
+
+}
+
+
+
+.report-section{
+
+    padding:18px;
+
+}
+
+
+
+.report-section h2{
+
+    font-size:20px;
+
+}
+
+
+
+.report-section pre{
+
+    font-size:14px;
+
+}
+
+
+
+.answer-box{
+
+    min-height:150px;
+
+}
+
+
+
+}
+
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+
+@media(max-width:400px){
+
+
+.interview-container h1{
+
+    font-size:22px;
+
+}
+
+
+.report-section{
+
+    padding:15px;
+
+}
+
+
+}

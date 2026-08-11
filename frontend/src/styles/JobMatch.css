@@ -1,0 +1,322 @@
+.jobmatch-container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    background:#f5f7fb;
+    padding:40px 20px;
+    box-sizing:border-box;
+}
+
+.jobmatch-card{
+    width:100%;
+    max-width:900px;
+    background:#ffffff;
+    border-radius:12px;
+    padding:30px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+}
+
+.jobmatch-card h2{
+    text-align:center;
+    margin-bottom:10px;
+    color:#222;
+}
+
+.jobmatch-card p{
+    text-align:center;
+    color:#666;
+    margin-bottom:20px;
+}
+
+.jobmatch-card textarea{
+    width:100%;
+    resize:vertical;
+    min-height:250px;
+    border:1px solid #dcdcdc;
+    border-radius:8px;
+    padding:15px;
+    font-size:15px;
+    outline:none;
+    box-sizing:border-box;
+    margin-bottom:20px;
+}
+
+.jobmatch-card textarea:focus{
+    border-color:#2563eb;
+}
+
+.analyze-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.analyze-btn:hover{
+    background:#1d4ed8;
+}
+
+.analyze-btn:disabled{
+    background:#94a3b8;
+    cursor:not-allowed;
+}
+
+.result-section{
+    margin-top:35px;
+    border-top:1px solid #eee;
+    padding-top:30px;
+}
+
+.result-section h3{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.score-box{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:10px solid #22c55e;
+    margin:0 auto 30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.score-box h1{
+    margin:0;
+    font-size:42px;
+    color:#22c55e;
+}
+
+.score-box p{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.skills-section{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.skills-section h4{
+    margin-bottom:15px;
+}
+
+.skills-section ul{
+    list-style:none;
+    padding:0;
+}
+
+.skills-section li{
+    padding:8px 0;
+}
+
+.suggestions{
+    margin-top:30px;
+}
+
+.suggestions h4{
+    margin-bottom:15px;
+}
+
+.suggestions ul{
+    list-style:none;
+    padding:0;
+}
+
+.suggestions li{
+    padding:8px 0;
+}
+
+/* =========================
+   Tablet Responsive
+========================= */
+
+@media(max-width:1024px){
+
+
+.jobmatch-container{
+
+    padding:30px 20px;
+
+}
+
+
+.jobmatch-card{
+
+    max-width:800px;
+
+    padding:25px;
+
+}
+
+
+.skills-section{
+
+    gap:20px;
+
+}
+
+
+}
+
+
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media(max-width:768px){
+
+
+.jobmatch-container{
+
+    padding:20px 10px;
+
+}
+
+
+
+.jobmatch-card{
+
+    padding:20px;
+
+    border-radius:15px;
+
+}
+
+
+
+.jobmatch-card h2{
+
+    font-size:24px;
+
+}
+
+
+
+.jobmatch-card p{
+
+    font-size:14px;
+
+}
+
+
+
+.jobmatch-card textarea{
+
+    min-height:180px;
+
+    font-size:14px;
+
+}
+
+
+
+.analyze-btn{
+
+    padding:12px;
+
+    font-size:15px;
+
+}
+
+
+
+/* Score */
+
+
+.score-box{
+
+    width:150px;
+
+    height:150px;
+
+    border-width:8px;
+
+}
+
+
+
+.score-box h1{
+
+    font-size:34px;
+
+}
+
+
+
+/* Skills */
+
+
+.skills-section{
+
+    grid-template-columns:1fr;
+
+    gap:15px;
+
+}
+
+
+
+.result-section{
+
+    padding-top:20px;
+
+}
+
+
+
+.suggestions li,
+.skills-section li{
+
+    font-size:14px;
+
+    line-height:1.5;
+
+}
+
+
+}
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media(max-width:400px){
+
+
+.jobmatch-card h2{
+
+    font-size:21px;
+
+}
+
+
+.score-box{
+
+    width:130px;
+
+    height:130px;
+
+}
+
+
+.score-box h1{
+
+    font-size:30px;
+
+}
+
+
+}

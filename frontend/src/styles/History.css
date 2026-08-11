@@ -1,0 +1,433 @@
+.history-container {
+  padding: 40px;
+}
+
+.history-title {
+  color: white;
+  font-size: 34px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.history-table thead {
+  background: rgba(255,255,255,.18);
+}
+
+.history-table th,
+.history-table td {
+  padding: 16px;
+  text-align: center;
+  color: white;
+}
+
+.history-table tr {
+  transition: .3s;
+}
+
+.history-table tbody tr:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.ats-score {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.good {
+  background: #22c55e;
+}
+
+.medium {
+  background: #eab308;
+}
+
+.low {
+  background: #ef4444;
+}
+
+.action-btn {
+  border: none;
+  padding: 8px 14px;
+  margin: 0 5px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.view-btn {
+  background: #2563eb;
+}
+
+.delete-btn {
+  background: #dc2626;
+}
+
+.download-btn {
+  background: #16a34a;
+}
+
+.empty-history {
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 20px;
+}.history-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:25px;
+
+}
+
+.history-count{
+
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+
+color:white;
+
+padding:12px 22px;
+
+border-radius:12px;
+
+font-weight:bold;
+
+font-size:16px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+}.search-box{
+
+margin-bottom:25px;
+
+}
+
+.search-box input{
+
+width:100%;
+
+padding:14px 18px;
+
+border:none;
+
+outline:none;
+
+border-radius:12px;
+
+font-size:16px;
+
+background:white;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+transition:.3s;
+
+}
+
+.search-box input:focus{
+
+box-shadow:0 0 0 3px rgba(37,99,235,.3);
+
+}/* =========================
+   History Responsive
+========================= */
+
+/* =========================
+   Tablet Responsive
+========================= */
+
+@media(max-width:1024px){
+
+
+.history-container{
+
+    padding:30px;
+
+}
+
+
+.history-table th,
+.history-table td{
+
+    padding:12px;
+
+    font-size:14px;
+
+}
+
+
+.action-btn{
+
+    padding:7px 10px;
+
+    font-size:13px;
+
+}
+
+
+}
+
+
+
+/* =========================
+   Mobile Responsive
+========================= */
+
+
+@media(max-width:768px){
+
+
+.history-container{
+
+    padding:15px;
+
+}
+
+
+
+/* Header */
+
+.history-header{
+
+    flex-direction:column;
+
+    gap:15px;
+
+    align-items:stretch;
+
+}
+
+
+.history-title{
+
+    font-size:26px;
+
+    text-align:center;
+
+}
+
+
+.history-count{
+
+    text-align:center;
+
+}
+
+
+
+/* Search */
+
+.search-box{
+
+    margin-bottom:15px;
+
+}
+
+
+.search-box input{
+
+    width:100%;
+
+    font-size:14px;
+
+}
+
+
+
+/* Table */
+
+.history-table{
+
+    border:0;
+
+    background:transparent;
+
+}
+
+
+
+/* Convert rows into cards */
+
+
+.history-table thead{
+
+    display:none;
+
+}
+
+
+
+.history-table tbody,
+.history-table tr,
+.history-table td{
+
+    display:block;
+
+    width:100%;
+
+}
+
+
+
+.history-table tr{
+
+    background:white;
+
+    margin-bottom:20px;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+
+
+.history-table td{
+
+    color:#333;
+
+    text-align:left;
+
+    padding:10px;
+
+    border:none;
+
+}
+
+
+
+/* Label before data */
+
+
+.history-table td:nth-child(1)::before{
+
+    content:"ID : ";
+
+    font-weight:bold;
+
+}
+
+
+.history-table td:nth-child(2)::before{
+
+    content:"Resume : ";
+
+    font-weight:bold;
+
+}
+
+
+.history-table td:nth-child(3)::before{
+
+    content:"ATS Score : ";
+
+    font-weight:bold;
+
+}
+
+
+.history-table td:nth-child(4)::before{
+
+    content:"Date : ";
+
+    font-weight:bold;
+
+}
+
+
+.history-table td:nth-child(5)::before{
+
+    content:"Actions : ";
+
+    font-weight:bold;
+
+}
+
+
+
+/* Buttons */
+
+
+.history-table td:last-child{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+}
+
+
+
+.action-btn{
+
+    flex:1;
+
+    min-width:90px;
+
+    margin:0;
+
+}
+
+
+}
+
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+
+@media(max-width:400px){
+
+
+.history-container{
+
+    padding:10px;
+
+}
+
+
+.history-title{
+
+    font-size:22px;
+
+}
+
+
+.action-btn{
+
+    min-width:80px;
+
+    font-size:12px;
+
+}
+
+
+
+}
