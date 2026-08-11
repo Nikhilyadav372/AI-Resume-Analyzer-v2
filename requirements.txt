@@ -1,0 +1,10 @@
+Flask
+Flask-Cors
+Flask-JWT-Extended
+mysql-connector-python
+PyMuPDF
+python-dotenv
+google-genai
+Werkzeug
+gunicorn
+reportlab
