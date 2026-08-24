@@ -1,108 +1,123 @@
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
+import api from "../services/api";
 
 function Register() {
   const [name, setName] = useState("");
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-const [confirmPassword, setConfirmPassword] = useState("");
-const handleSubmit = async (e) => {
-const navigate = useNavigate();
-  e.preventDefault();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
-  if (password !== confirmPassword) {
-    alert("Passwords do not match");
-    return;
-  }
-console.log({
-  name,
-  email,
-  password,
-});
-  try {
-    const response = await axios.post(
-      "http://127.0.0.1:5000/register",
-     {
-  full_name: name,
-  email: email,
-  password: password,
-}
-    );
+  const navigate = useNavigate();
 
-    console.log(response.data);
-    localStorage.setItem("token", response.data.token);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-alert(response.data.message);
-navigate("/login");
-  } catch (error) {
-    console.log(error);
-
-    if (error.response) {
-      alert(error.response.data.message);
-    } else {
-      alert("Server Error");
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
     }
-  }
-};
-return (
-  <div className="login-container">
 
-    <div className="login-card">
+    console.log({
+      name,
+      email,
+      password,
+    });
 
-      <h1>🤖 AI Resume Analyzer</h1>
+    try {
+      const response = await api.post("/register", {
+        full_name: name,
+        email: email,
+        password: password,
+      });
 
-      <p>Create your account</p>
+      console.log(response.data);
 
-      <form onSubmit={handleSubmit}>
+      if (response.data.token) {
+        localStorage.setItem("token", response.data.token);
+      }
 
-        <label>Full Name</label>
+      alert(response.data.message);
 
-        <input
-          type="text"
-          placeholder="Enter your name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+      navigate("/login");
+    } catch (error) {
+      console.log("Full Error:", error);
 
-        <label>Email</label>
+      if (error.response) {
+        console.log("Status:", error.response.status);
+        console.log("Data:", error.response.data);
 
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        alert(
+          error.response.data.message || "Registration failed"
+        );
+      } else if (error.request) {
+        alert("No response from server");
+      } else {
+        alert("Server Error");
+      }
+    }
+  };
 
-        <label>Password</label>
+  return (
+    <div className="login-container">
+      <div className="login-card">
 
-        <input
-          type="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <h1>🤖 AI Resume Analyzer</h1>
 
-        <label>Confirm Password</label>
+        <p>Create your account</p>
 
-        <input
-          type="password"
-          placeholder="Confirm your password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
+        <form onSubmit={handleSubmit}>
 
-        <button type="submit">
-          Create Account
-        </button>
+          <label>Full Name</label>
 
-      </form>
+          <input
+            type="text"
+            placeholder="Enter your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
 
+          <label>Email</label>
+
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+          <label>Password</label>
+
+          <input
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+
+          <label>Confirm Password</label>
+
+          <input
+            type="password"
+            placeholder="Confirm your password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+
+          <button type="submit">
+            Create Account
+          </button>
+
+        </form>
+
+      </div>
     </div>
-
-  </div>
-);
+  );
 }
 
 export default Register;
